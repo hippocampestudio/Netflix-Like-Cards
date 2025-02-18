@@ -5,7 +5,7 @@
     // Styles pour chaque carte Netflix
     .wp-block-create-block-netflix-card {
         flex: 0 0 auto;
-        width: 16vw;
+        width: 20vw;
         scroll-snap-align: start;
         @media (max-width: 768px) {
             width: 30vw;
@@ -17,7 +17,7 @@
         display: flex;
         position: relative;
         transition: transform 0.3s ease;
-        width: 16vw;
+        width: 20vw;
         aspect-ratio: 16 / 9;
         overflow: hidden;
         border-radius: 5px;
