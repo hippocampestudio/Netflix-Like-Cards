@@ -1,0 +1,22 @@
+{
+  "apiVersion": 2,
+  "name": "create-block/netflix-like-cards",
+  "title": "Netflix-Like Cards",
+  "category": "media",
+  "icon": "format-gallery",
+  "description": "Un carrousel de cartes style Netflix",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "cards": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "textdomain": "netflix-like-cards",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

@@ -1,0 +1,237 @@
+.wp-block-create-block-netflix-like-cards {
+    // Styles de base pour le conteneur principal
+    position: relative;
+
+    // Styles pour chaque carte Netflix
+    .wp-block-create-block-netflix-card {
+        flex: 0 0 auto;
+        width: 200px;
+        scroll-snap-align: start;
+    }
+
+    // Styles pour la carte Netflix individuelle
+    .netflix-card {
+        display: flex;
+        position: relative;
+        transition: transform 0.3s ease;
+        width: 200px;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: 10px;
+
+        // Ajustement du ratio pour mobile
+        @media (max-width: 768px) {
+            aspect-ratio: 3 / 4;
+        }
+
+        // Styles pour l'image de la carte
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        // Styles pour le contenu de la carte
+        .netflix-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            line-height: 1;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
+            padding: 50px 10px 10px 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+
+            // Styles pour le titre et le paragraphe
+            h3, p {
+                color: white;
+                margin: 0;
+            }
+
+            h3 {
+                font-size: 12px;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+            p {
+                font-size: 10px;
+            }
+        }
+    }
+
+    // Effets de survol pour les cartes
+    .wp-block-create-block-netflix-card {
+        transition: all 0.3s ease;
+
+        &:first-child:hover {
+            transform: scale(1.25) translateX(30px);
+        }
+
+        &:hover {
+            transform: scale(1.25);
+            z-index: 1;
+
+            img {
+                transform: scale(1.05);
+            }
+
+            .netflix-card-content {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    // Styles pour le carrousel
+    .netflix-like-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+        padding: 20px 0;
+        position: relative;
+        top: -20px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    // Styles pour le titre du carrousel
+    .netflix-like-carousel-title {
+        margin: 0 0 15px 0;
+    }
+
+    // Styles pour les flèches de navigation
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        height: auto;
+        width: auto;
+        font-size: 30px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        z-index: 10;
+        padding: 5px;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        &.left {
+            left: 10px;
+        }
+
+        &.right {
+            right: 10px;
+        }
+    }
+
+    // Icônes pour les flèches de navigation
+    .carousel-arrow.left:before {
+        content: '\f341'; // Dashicon flèche gauche
+    }
+
+    .carousel-arrow.right:before {
+        content: '\f345'; // Dashicon flèche droite
+    }
+}
+
+// Styles pour la lightbox
+body.lightbox-open {
+    overflow: hidden;
+}
+
+.netflix-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox-content {
+    position: relative;
+    background-color: #000;
+    margin: 5% auto;
+    width: 95%;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.lightbox-header {
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,.1) 0 50%, rgba(0,0,0,0.75) 100%);
+    }
+
+    * {
+        color: #fff;
+        position: relative;
+        z-index: 1;
+        margin: 0;
+    }
+}
+
+.lightbox-body {
+    padding: 20px;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    .lightbox-content {
+        width: 80%;
+    }
+}
+
+.netflix-lightbox.active {
+    display: block;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 10px;
+    right: 35px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 2;
+    padding: 0;
+    line-height: 1;
+
+    &:hover {
+        color: #aaa;
+    }
+}

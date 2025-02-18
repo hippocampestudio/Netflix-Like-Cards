@@ -1,0 +1,36 @@
+/**
+ * Les styles suivants sont appliqués uniquement dans l'éditeur.
+ *
+ * Remplacez-les par vos propres styles ou supprimez complètement le fichier si nécessaire.
+ */
+
+// Style de base pour le bloc dans l'éditeur
+.wp-block-create-block-netflix-like-cards {
+	border: 1px dotted #f00;
+}
+
+// Styles spécifiques pour le carousel et les cartes dans l'éditeur
+.wp-block-create-block-netflix-like-cards {
+	// Style du carousel
+	.netflix-like-carousel {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		gap: 20px;
+		padding: 20px 0;
+	}
+  
+	// Style pour la disposition des blocs internes
+	.block-editor-inner-blocks .block-editor-block-list__layout {
+		display: flex;
+		flex-wrap: nowrap;
+		gap: 20px;
+	}
+  
+	// Style pour chaque carte Netflix
+	.wp-block-create-block-netflix-card {
+		flex: 0 0 200px;
+		width: 200px;
+		max-width: 200px;
+	}
+}

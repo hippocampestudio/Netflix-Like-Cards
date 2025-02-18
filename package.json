@@ -1,0 +1,20 @@
+{
+	"name": "netflix-like-cards",
+	"version": "0.1.0",
+	"description": "Le plugin **Netflix Like Cards** permet de créer des cartes personnalisées dans un format de style Netflix. Utilisant l'éditeur de blocs Gutenberg, ce plugin vous permet d'ajouter facilement des cartes avec des images, des titres, des descriptions et des liens vers d'autres articles.",
+	"author": "Hippocampe Studio",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^30.11.0"
+	}
+}
