@@ -70,11 +70,11 @@
         transition: all 0.3s ease;
 
         &:first-child:hover {
-            transform: scale(1.25) translateX(30px);
+            transform: scale(1.15) translateX(30px);
         }
 
         &:hover {
-            transform: scale(1.25);
+            transform: scale(1.15);
             z-index: 1;
 
             img {
