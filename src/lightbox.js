@@ -44,11 +44,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     const titleElement = doc.querySelector('h1');
                     const contentElement = doc.querySelector('.entry-content');
                     const featuredImageElement = doc.querySelector('.wp-post-image');
+                    const prestations = doc.querySelector('.prestations');
+
+                    if(prestations){
+                        contentElement.querySelectorAll('.prestations').forEach(e => e.remove());
+                        prestations.querySelectorAll("a").forEach(link => {
+                            //link.href="#";
+                            newNode = document.createElement('span');
+                            newNode.classList.add('prestation');
+                            newNode.innerHTML = link.text;
+                            link.replaceWith(newNode);
+                        });
+                        contentElement.appendChild(prestations);
+                    }
 
                     // Vérification et préparation du contenu
                     const title = titleElement ? titleElement.innerHTML : __('Titre non disponible', 'netflix-like-cards');
                     const content = contentElement ? contentElement.innerHTML : __('Contenu non disponible', 'netflix-like-cards');
                     const featuredImageSrc = featuredImageElement ? featuredImageElement.src : '';
+                    
+                    
 
                     // Injection du contenu dans la lightbox
                     lightboxContent.innerHTML = `
